@@ -348,89 +348,6 @@ void viewPassengerInfo(Shuttle trips[], int tripCount) {
     }
 }
 
-/*
-void loadPassengerFromFile(Shuttle trips[], int tripCount) {
-    FILE *file = fopen("trip.txt", "r");
-    Passenger p;
-    //int i;
-    int index;
-    int choice;
-    if (!file) {
-        printf("Error opening file.\n");
-        return;
-    }
-    fscanf(file, "%s %s %s %d %d", p.tripNumber, p.name, p.idNumber, &p.priority, &choice);
-        index = findTripIndex(trips, tripCount, p.tripNumber); //index is always returning 0 for some reason
-        switch (choice) {
-            case 1:
-                if (index >= 0 && index <= 4){
-                    strcpy(p.dropOffPoint, "Mamplasan Toll Exit");          
-                    trips[index].dropOffCount[0]++;  
-                }
-                else if (index >= 5 && index <= 9){
-                    strcpy(p.dropOffPoint, "Laguna Blvd. Guard House");
-                    trips[index].dropOffCount[0]++;
-                }
-                else if (index >= 10 && index <= 15){
-                    strcpy(p.dropOffPoint, "Petron Gasoline Station Along Gil Puyat Avenue");
-                    trips[index].dropOffCount[0]++;
-                } 
-                else if (index >= 16 && index <= 21){
-                    strcpy(p.dropOffPoint, "College of St. Benilde (CSB) along Taft Avenue");
-                    trips[index].dropOffCount[0]++;
-                }
-                break;
-            case 2:
-                if (index >= 0 && index <= 4){
-                    strcpy(p.dropOffPoint, "Phase 5, San Jose Village");
-                    trips[index].dropOffCount[1]++;
-                }
-                else if (index >= 5 && index <= 9){
-                    strcpy(p.dropOffPoint, "Milagros Del Rosario (MRR) Building East Canopy");
-                    trips[index].dropOffCount[1]++;
-                }
-                else if (index >= 10 && index <= 15){
-                    strcpy(p.dropOffPoint, "Gate 4: Gokongwei Gate");
-                    trips[index].dropOffCount[1]++;
-                }
-                else if (index >= 16 && index <= 21){
-                    strcpy(p.dropOffPoint, "Gate 4: Gokongwei Gate");
-                    trips[index].dropOffCount[1]++;
-                }
-                break;
-            case 3:
-                if (index >= 0 && index <= 4){
-                    strcpy(p.dropOffPoint, "Milagros Del Rosario (MRR) Building East Canopy");
-                    trips[index].dropOffCount[2]++;
-                }
-                else if (index >= 10 && index <= 15){
-                    strcpy(p.dropOffPoint, "Gate 2: North Gate (HSSH)");
-                    trips[index].dropOffCount[2]++;
-                }
-                else if (index >= 16 && index <= 21){
-                    strcpy(p.dropOffPoint, "Gate 2: North Gate (HSSH)");
-                    trips[index].dropOffCount[2]++;
-                }
-                else choice = 0; // Invalid choice
-                break;
-            case 4:
-                if (index >= 10 && index <= 15){
-                    strcpy(p.dropOffPoint, "Gate 1: South Gate (LS Building Entrance)");
-                    trips[index].dropOffCount[3]++;
-                }
-                else if (index >= 16 && index <= 21){
-                strcpy(p.dropOffPoint, "Gate 1: South Gate (LS Building Entrance)");
-                trips[index].dropOffCount[3]++;
-                }
-                else choice = 0; // Invalid choice
-                break;
-        }
-    fclose(file);
-    printf("Passenger loaded successfully!\n");
-    printf("%d\n", index);
-}
-
-*/
 void loadPassengerFromFile(Shuttle trips[], int tripCount) {
     FILE *file = fopen("trip.txt", "r");
     if (file) {
@@ -503,28 +420,6 @@ void loadPassengerFromFile(Shuttle trips[], int tripCount) {
         printf("Error opening file.\n");
     }
 }
-
-/*
-void searchPassenger(Shuttle trips[], int tripCount) {
-    char lastName[NAME_LENGTH];
-    int i, j, found = 0;
-
-    printf("Enter last name to search: ");
-    scanf("%s", lastName);
-
-    for (i = 0; i < tripCount; i++) {
-        for (j = 0; j < trips[i].passengerCount; j++) {
-            if (strstr(trips[i].passengers[j].name, lastName)) {
-                printf("%s - Trip: %s - ID: %s - Priority: %d\n", trips[i].passengers[j].name, trips[i].tripNumber, trips[i].passengers[j].idNumber, trips[i].passengers[j].priority);
-                found = 1;
-            }
-        }
-    }
-    if (!found) {
-        printf("Passenger not found.\n");
-    }
-}
-*/
 
 void searchPassenger(Shuttle trips[], int tripCount) {
     char lastName[NAME_LENGTH];
