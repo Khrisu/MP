@@ -602,20 +602,20 @@ void viewPassengerCount(Shuttle trips[], int tripCount) {
                             }
                         }
                         
-                        if (seat == total_seats - 1 && columns == 4) {
-                            printf("Driver | ");
+                        if (seat == 13) {
+                            printf("O13| Driver |");
                             seat++;
-                        } 
-                        else if (seat == 14 && columns == 4) {
-                            printf("     | ");
-                            seat++;
-                        }
-                        else {
+                        } else {
                             if (occupied) {
-                                printf("X%2d | ", seat);
+                                printf("X%d ", seat);
                             } else {
-                                printf("O%2d | ", seat);
+                                printf("O%d ", seat);
                             }
+                            
+                            if (seat < 10) {
+                                printf(" ");
+                            }
+                            printf("| ");
                             seat++;
                         }
                     }
@@ -682,8 +682,3 @@ int findTripIndex(Shuttle trips[], int tripCount, char tripNumber[]) {
     return result;  // Single return at the end
 }
 
-
-void exitProgram(Shuttle trips[], int tripCount) {
-    saveTripsToFile(trips, tripCount);
-    printf("Exiting program... Data has been saved.\n");
-}
