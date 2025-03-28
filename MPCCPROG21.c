@@ -5,6 +5,7 @@ learned.  I have constructed the functions and their respective algorithms and c
 program was run, tested, and debugged by my own efforts.  I further certify that I have not copied in part or whole or
 otherwise plagiarized the work of other students and/or persons.
                                                                                                                  John Raphael Pineda, DLSU ID# <number>
+														 Fritz Ian B. Fernandez, 12410764
 *********************************************************************************************************
 */
 
